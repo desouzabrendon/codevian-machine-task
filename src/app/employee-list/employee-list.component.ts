@@ -12,6 +12,7 @@ export class EmployeeListComponent implements OnInit {
   columnGap = 0;
   columnHeaderData = [];
   employeeData = [];
+  searchString = '';
 
   constructor(
     private employeeService: EmployeeService
@@ -24,7 +25,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   getEmployees() {
-    this.employeeService.getEmployees().subscribe(response => {
+    this.employeeService.getEmployees(this.searchString).subscribe(response => {
       this.employeeData = this.checkEmployeeResponse(response);
     }, error => {
       // handle error
@@ -46,5 +47,10 @@ export class EmployeeListComponent implements OnInit {
 
   checkField(value) {
     return value || 'NA';
+  }
+
+  onSearch(event) {
+    this.searchString = event;
+    this.getEmployees();
   }
 }

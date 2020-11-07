@@ -8,18 +8,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TableHeadersComponent } from './commonComponents/table-headers/table-headers.component';
 import { EmployeeService } from './services/employee.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './commonComponents/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    TableHeadersComponent
+    TableHeadersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     EmployeeService

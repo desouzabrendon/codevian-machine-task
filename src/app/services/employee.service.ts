@@ -12,8 +12,11 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getEmployees(): Observable<any> {
-    const url = BASE_URL + 'employee';
+  getEmployees(searchString): Observable<any> {
+    let url = BASE_URL + 'employee';
+    if (searchString) {
+      url = url + '?search=' + encodeURIComponent(searchString);
+    }
     return this.httpClient.get(url);
   }
 }

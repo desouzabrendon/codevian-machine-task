@@ -1,12 +1,16 @@
 <div class="data-wrapper">
 
-    <div>Search</div>
+    <div>
+        <app-search [searchString]="searchString" (search)="onSearch($event)" (searchCleared)="onSearch($event)"
+            fxFlex="20">
+        </app-search>
+    </div>
 
     <div class="margin-top20 data-container">
         <!-- Table Title -->
         <div class="padding15-20" fxLayoutAlign="space-between center">
             <div>Employees</div>
-            <div>Add Button</div>
+            <button class="add-button">+ Add</button>
         </div>
 
         <!-- Table Header -->
