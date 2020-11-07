@@ -10,13 +10,15 @@ import { EmployeeService } from './services/employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './commonComponents/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { AddEditEmployeeComponent } from './employee-list/add-edit-employee/add-edit-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
     TableHeadersComponent,
-    SearchComponent
+    SearchComponent,
+    AddEditEmployeeComponent
   ],
   imports: [
     BrowserModule,

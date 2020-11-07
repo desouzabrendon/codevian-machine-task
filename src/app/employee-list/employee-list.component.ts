@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeTableHeaderData } from './employee-table-header-data';
 import { EmployeeService } from './../services/employee.service';
 import * as _ from 'lodash';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -15,7 +16,9 @@ export class EmployeeListComponent implements OnInit {
   searchString = '';
 
   constructor(
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
@@ -52,5 +55,9 @@ export class EmployeeListComponent implements OnInit {
   onSearch(event) {
     this.searchString = event;
     this.getEmployees();
+  }
+
+  addEmployee() {
+    this.router.navigate(['./add'], { relativeTo: this.activatedRoute });
   }
 }
