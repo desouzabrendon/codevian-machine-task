@@ -1,1 +1,43 @@
-<p>add-edit-employee works!</p>
+<div>
+    <div>Name</div>
+    <input placeholder="Name" required="true" type="text" [(ngModel)]="employeeData.name"
+        [formControl]="nameFormControl">
+    <div *ngIf="nameFormControl.hasError('required')">
+        Name is required
+    </div>
+</div>
+
+<div class="margin-top20">
+    <div>Phone Number</div>
+    <input placeholder="Phone Number" required="true" type="text" [(ngModel)]="employeeData.phone"
+        [formControl]="phoneFormControl">
+    <div *ngIf="phoneFormControl.hasError('required')">
+        Phone Number is required
+    </div>
+</div>
+
+<div class="margin-top20">
+    <div>City</div>
+    <input placeholder="City" type="text" [(ngModel)]="employeeData.address.city">
+</div>
+
+<div class="margin-top20">
+    <div>Address Line 1</div>
+    <input placeholder="City" type="text" [(ngModel)]="employeeData.address.address_line1">
+</div>
+
+<div class="margin-top20">
+    <div>Address Line 2</div>
+    <input placeholder="City" type="text" [(ngModel)]="employeeData.address.address_line2">
+</div>
+
+<div class="margin-top20">
+    <div>Postal Code</div>
+    <input placeholder="City" type="text" [(ngModel)]="employeeData.address.postal_code">
+</div>
+
+<div class="margin-top20">
+    <button [disabled]="!employeeData.name || !employeeData.phone" (click)="submit()">
+        Submit
+    </button>
+</div>

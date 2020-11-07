@@ -19,4 +19,14 @@ export class EmployeeService {
     }
     return this.httpClient.get(url);
   }
+
+  getEmployeeById(employeeId): Observable<any> {
+    const url = BASE_URL + 'employee/' + employeeId;
+    return this.httpClient.get(url);
+  }
+
+  addEmployee(payload): Observable<any> {
+    const url = BASE_URL + 'employee';
+    return this.httpClient.post(url, payload);
+  }
 }
