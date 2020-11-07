@@ -17,8 +17,8 @@
             <div *ngFor="let employee of employeeData" class="list-row pointer" fxLayout="row"
                 fxLayoutAlign="start center" [fxLayoutGap]="columnGap + '%'">
 
-                <div class="truncate-text" [title]="employee.id" [fxFlex]="columnHeaderData[0].width">
-                    {{employee.id}}
+                <div class="truncate-text" [title]="employee._id" [fxFlex]="columnHeaderData[0].width">
+                    {{employee._id}}
                 </div>
 
                 <div class="truncate-text" [title]="employee.name" [fxFlex]="columnHeaderData[1].width">
