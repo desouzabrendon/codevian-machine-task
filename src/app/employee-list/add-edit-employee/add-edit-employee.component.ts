@@ -40,14 +40,26 @@ export class AddEditEmployeeComponent implements OnInit {
 
   getEmployeeData() {
     this.employeeService.getEmployeeById(this.employeeId).subscribe(response => {
+      delete response._id;
+      this.employeeData = JSON.parse(JSON.stringify(response));
     }, error => {
     });
   }
 
   submit() {
+    if (!this.employeeId) {
+      this.addEmployee();
+    } else {
+      this.updateEmployee();
+    }
+  }
+
+  addEmployee() {
     this.employeeService.addEmployee(this.employeeData).subscribe(response => {
       this.location.back();
     }, error => {
     });
   }
+
+  updateEmployee() { }
 }

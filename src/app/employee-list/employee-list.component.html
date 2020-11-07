@@ -49,6 +49,11 @@
                     {{employee.postal_code}}
                 </div>
 
+                <div class="truncate-text edit" [title]="'Edit'" [fxFlex]="columnHeaderData[7].width"
+                    (click)="editEmployee(employee)">
+                    Edit
+                </div>
+
             </div>
         </div>
 

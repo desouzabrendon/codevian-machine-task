@@ -60,4 +60,8 @@ export class EmployeeListComponent implements OnInit {
   addEmployee() {
     this.router.navigate(['./add'], { relativeTo: this.activatedRoute });
   }
+
+  editEmployee(employee) {
+    this.router.navigate(['./edit', employee._id], { relativeTo: this.activatedRoute });
+  }
 }

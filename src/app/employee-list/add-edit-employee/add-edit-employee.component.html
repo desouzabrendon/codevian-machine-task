@@ -37,7 +37,8 @@
 </div>
 
 <div class="margin-top20">
-    <button [disabled]="!employeeData.name || !employeeData.phone" (click)="submit()">
+    <button class="submit-button" [ngClass]="{'disabled-button': !employeeData.name || !employeeData.phone}"
+        [disabled]="!employeeData.name || !employeeData.phone" (click)="submit()">
         Submit
     </button>
 </div>

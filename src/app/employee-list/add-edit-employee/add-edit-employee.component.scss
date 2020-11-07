@@ -9,4 +9,7 @@
     background-color: #ff3951;
     border-radius: 20px;
     outline: none;
+    &.disabled-button {
+        background-color: gray !important;
+    }
 }
