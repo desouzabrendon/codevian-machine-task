@@ -4,13 +4,51 @@
 
     <div class="margin-top20 data-container">
         <!-- Table Title -->
-        <div class="padding10-20" fxLayoutAlign="space-between center">
+        <div class="padding15-20" fxLayoutAlign="space-between center">
             <div>Employees</div>
             <div>Add Button</div>
         </div>
 
         <!-- Table Header -->
-        <app-table-headers></app-table-headers>
+        <app-table-headers [headerGap]="columnGap" [headerData]="columnHeaderData"></app-table-headers>
+
+        <!-- Table Row Data -->
+        <div class="mh-50">
+            <div *ngFor="let employee of employeeData" class="list-row pointer" fxLayout="row"
+                fxLayoutAlign="start center" [fxLayoutGap]="columnGap + '%'">
+
+                <div class="truncate-text" [title]="employee.id" [fxFlex]="columnHeaderData[0].width">
+                    {{employee.id}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.name" [fxFlex]="columnHeaderData[1].width">
+                    {{employee.name}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.phone" [fxFlex]="columnHeaderData[2].width">
+                    {{employee.phone}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.address.city" [fxFlex]="columnHeaderData[3].width">
+                    {{employee.address.city}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.address.address_line1"
+                    [fxFlex]="columnHeaderData[4].width">
+                    {{employee.address.address_line1}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.address.address_line2"
+                    [fxFlex]="columnHeaderData[5].width">
+                    {{employee.address.address_line2}}
+                </div>
+
+                <div class="truncate-text" [title]="employee.address.postal_code" [fxFlex]="columnHeaderData[6].width">
+                    {{employee.address.postal_code}}
+                </div>
+
+            </div>
+        </div>
 
     </div>
 

@@ -1,1 +1,5 @@
-<p>table-headers works!</p>
+<div class="width100 table-header" fxLayout="row" fxLayoutAlign="start start" [fxLayoutGap]="headerGap + '%'">
+    <div *ngFor="let header of headerData" [fxFlex]="header.width">
+        {{header.name}}
+    </div>
+</div>

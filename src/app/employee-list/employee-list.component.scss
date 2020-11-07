@@ -1,3 +1,16 @@
-.padding10-20 {
+.padding15-20 {
+    padding: 15px 20px;
+}
+
+.list-row {
     padding: 10px 20px;
+    color: #484848;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 20px;
+    border-bottom: 1px solid #eeeded;
+}
+
+.mh-50 {
+    min-height: 50vh;
 }
