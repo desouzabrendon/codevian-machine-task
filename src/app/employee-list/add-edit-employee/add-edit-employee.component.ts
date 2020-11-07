@@ -61,5 +61,10 @@ export class AddEditEmployeeComponent implements OnInit {
     });
   }
 
-  updateEmployee() { }
+  updateEmployee() {
+    this.employeeService.updateEmployee(this.employeeId, this.employeeData).subscribe(response => {
+      this.location.back();
+    }, error => {
+    });
+  }
 }

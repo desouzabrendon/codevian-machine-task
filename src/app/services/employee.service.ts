@@ -29,4 +29,9 @@ export class EmployeeService {
     const url = BASE_URL + 'employee';
     return this.httpClient.post(url, payload);
   }
+
+  updateEmployee(employeeId, payload): Observable<any> {
+    const url = BASE_URL + 'employee/' + employeeId;
+    return this.httpClient.put(url, payload);
+  }
 }
