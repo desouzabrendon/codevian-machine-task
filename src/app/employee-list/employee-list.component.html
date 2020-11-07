@@ -17,8 +17,8 @@
             <div *ngFor="let employee of employeeData" class="list-row pointer" fxLayout="row"
                 fxLayoutAlign="start center" [fxLayoutGap]="columnGap + '%'">
 
-                <div class="truncate-text" [title]="employee._id" [fxFlex]="columnHeaderData[0].width">
-                    {{employee._id}}
+                <div class="truncate-text" [title]="employee.id" [fxFlex]="columnHeaderData[0].width">
+                    {{employee.id}}
                 </div>
 
                 <div class="truncate-text" [title]="employee.name" [fxFlex]="columnHeaderData[1].width">
@@ -29,22 +29,20 @@
                     {{employee.phone}}
                 </div>
 
-                <div class="truncate-text" [title]="employee.address.city" [fxFlex]="columnHeaderData[3].width">
-                    {{employee.address.city}}
+                <div class="truncate-text" [title]="employee.city" [fxFlex]="columnHeaderData[3].width">
+                    {{employee.city}}
                 </div>
 
-                <div class="truncate-text" [title]="employee.address.address_line1"
-                    [fxFlex]="columnHeaderData[4].width">
-                    {{employee.address.address_line1}}
+                <div class="truncate-text" [title]="employee.address_line1" [fxFlex]="columnHeaderData[4].width">
+                    {{employee.address_line1}}
                 </div>
 
-                <div class="truncate-text" [title]="employee.address.address_line2"
-                    [fxFlex]="columnHeaderData[5].width">
-                    {{employee.address.address_line2}}
+                <div class="truncate-text" [title]="employee.address_line2" [fxFlex]="columnHeaderData[5].width">
+                    {{employee.address_line2}}
                 </div>
 
-                <div class="truncate-text" [title]="employee.address.postal_code" [fxFlex]="columnHeaderData[6].width">
-                    {{employee.address.postal_code}}
+                <div class="truncate-text" [title]="employee.postal_code" [fxFlex]="columnHeaderData[6].width">
+                    {{employee.postal_code}}
                 </div>
 
             </div>
